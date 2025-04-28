@@ -16,20 +16,20 @@ AGridCell::AGridCell()
 	CellMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("CellMesh"));
 	RootComponent = CellMesh;
 
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> PlaneMeshFinder(TEXT("/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> PlaneMeshFinder(TEXT("/Script/Engine.StaticMesh'/Engine/BasicShapes/Plane.Plane'"));
     if (PlaneMeshFinder.Succeeded())
     {
         CellMesh->SetStaticMesh(PlaneMeshFinder.Object);
     }
 
-    static ConstructorHelpers::FObjectFinder<UMaterialInterface> NormalMatFinder(TEXT("/Game/StarterContent/Materials/M_Basic_Wall.M_Basic_Wall"));
+    static ConstructorHelpers::FObjectFinder<UMaterialInterface> NormalMatFinder(TEXT("/Script/Engine.Material'/Engine/EngineMaterials/DefaultDecalMaterial.DefaultDecalMaterial'"));
     if (NormalMatFinder.Succeeded())
     {
         NormalMaterial = NormalMatFinder.Object;
         CellMesh->SetMaterial(0, NormalMaterial);
     }
 
-    static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObstacleMatFinder(TEXT("/Game/StarterContent/Materials/M_Brick_Clay_Old.M_Brick_Clay_Old"));
+    static ConstructorHelpers::FObjectFinder<UMaterialInterface> ObstacleMatFinder(TEXT("/Script/Engine.Material'/Engine/EngineMaterials/EmissiveTexturedMaterial.EmissiveTexturedMaterial'"));
     if (ObstacleMatFinder.Succeeded())
     {
         ObstacleMaterial = ObstacleMatFinder.Object;

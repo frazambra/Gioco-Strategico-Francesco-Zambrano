@@ -11,7 +11,7 @@ AUnitPawn::AUnitPawn()
     UnitMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PawnMesh"));
     RootComponent = UnitMesh;
 
-    static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshFinder(TEXT("/Game/StarterContent/Shapes/Shape_Plane.Shape_Plane"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> MeshFinder(TEXT("/Script/Engine.StaticMesh'/Engine/BasicShapes/Plane.Plane'"));
     if (MeshFinder.Succeeded())
     {
         UnitMesh->SetStaticMesh(MeshFinder.Object);
